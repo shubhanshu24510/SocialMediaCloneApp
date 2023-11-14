@@ -1,6 +1,7 @@
 package com.shubhans.googlysocialproject.presentation.splash
 
 import android.view.animation.OvershootInterpolator
+import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -16,18 +17,21 @@ import androidx.navigation.NavController
 import com.shubhans.googlysocialproject.R
 import com.shubhans.googlysocialproject.presentation.utils.Constants
 import com.shubhans.googlysocialproject.presentation.utils.Screen
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 
 @Composable
-fun SplashScreen(navController: NavController) {
-    val scale = remember {
-        androidx.compose.animation.core.Animatable(0f)
+fun SplashScreen(navController: NavController,
+                 dispatcher: CoroutineDispatcher =Dispatchers.Main) {
+    val scale = remember { Animatable(0f)
     }
     val overshootInterpolator = remember {
         OvershootInterpolator(2f)
     }
-
     LaunchedEffect(key1 = true) {
+        withContext(dispatcher){
             scale.animateTo(
                 targetValue = 0.5f,
                 animationSpec = tween(
@@ -40,6 +44,8 @@ fun SplashScreen(navController: NavController) {
             delay(Constants.Splash_screen_duration)
             navController.popBackStack()
             navController.navigate(Screen.LoginScreen.route)
+        }
+
     }
 
     Box(modifier = Modifier.fillMaxSize(),
