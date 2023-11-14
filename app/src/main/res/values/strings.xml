@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Googly Social Project</string>
+    <string name="Log_in">Login</string>
+    <string name="password_hint">Password</string>
+    <string name="username_hint">Username/E-mail</string>
+    <string name="do_not_have_account_yet">Don\'t have an account?</string>
+    <string name="sign_up">sign_up</string>
 </resources>

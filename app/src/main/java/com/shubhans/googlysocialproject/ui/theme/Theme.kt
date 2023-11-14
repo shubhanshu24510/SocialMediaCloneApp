@@ -18,5 +18,6 @@ fun GooglySocialProjectTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme = DarkColorScheme,
         typography = Typography,
-        content = content)
+        content = content
+    )
 }

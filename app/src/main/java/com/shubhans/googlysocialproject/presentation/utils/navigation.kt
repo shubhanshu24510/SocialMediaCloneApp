@@ -19,11 +19,7 @@ fun Navigation() {
             ResisterScreen()
         }
         composable(Screen.LoginScreen.route){
-            LoginScreen()
+            LoginScreen(navController =navController)
         }
     }
-
-
-
-
 }
