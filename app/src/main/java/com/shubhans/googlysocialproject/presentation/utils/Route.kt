@@ -6,6 +6,7 @@ sealed class Screen(val route:String){
     object LoginScreen :Screen("login_Screen")
     object MainFeedScreen :Screen("main_feed_screen")
     object PostDetails :Screen("post_details")
+    object ActivityScreen :Screen("activity_screen")
     object ChatScreen :Screen("chat_screen")
     object MessageScreen :Screen("message_screen")
     object ProfileScreen :Screen("profile_screen")

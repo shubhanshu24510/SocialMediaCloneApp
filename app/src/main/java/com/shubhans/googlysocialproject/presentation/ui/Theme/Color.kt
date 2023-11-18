@@ -1,4 +1,4 @@
-package com.shubhans.googlysocialproject.ui.theme
+package com.shubhans.googlysocialproject.presentation.ui.Theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -21,32 +21,33 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class StandardTextFieldTest{
+class StandardTextFieldTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Before
-    fun setup(){
+    fun setup() {
         composeTestRule.setContent {
             var text by remember {
                 mutableStateOf("")
             }
             GooglySocialProjectTheme {
                 StandardTextField(
-                    text =text,
-                    onValueChange = { text =it},
+                    text = text,
+                    onValueChange = { text = it },
                     maxLength = 5,
                     modifier = Modifier.semantics {
-                        testTag ="standard_text_field"
+                        testTag = "standard_text_field"
                     })
-
             }
 
         }
+
     }
+
     @Test
     fun enterTooLonString_maxLengthNotExceeded() {
-        val expectedString ="sssss"
+        val expectedString = "sssss"
         composeTestRule
             .onNodeWithTag("standard_text_field")
             .performTextClearance()
@@ -63,5 +64,6 @@ class StandardTextFieldTest{
 
 
     }
-
 }
+
+
