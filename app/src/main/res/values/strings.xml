@@ -15,8 +15,8 @@
     <string name="comment">comment</string>
     <string name="share">share</string>
     <string name="read_more">read more</string>
-    <string name="liked_by_x_people">liked by x people</string>
-    <string name="x_comment">x comment</string>
+    <string name="liked_by_x_people">liked by %d people</string>
+    <string name="x_comments">%d comments</string>
     <string name="home">Home</string>
     <string name="chat">Chat\n</string>
     <string name="activity">Activity</string>

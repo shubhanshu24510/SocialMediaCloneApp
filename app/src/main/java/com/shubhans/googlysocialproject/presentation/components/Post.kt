@@ -124,7 +124,7 @@ fun Post(
                     )
                     Text(
                         text = stringResource(
-                            id = R.string.x_comment,
+                            id = R.string.x_comments,
                             post.commentCount
                         ),
                         style = TextStyle()
