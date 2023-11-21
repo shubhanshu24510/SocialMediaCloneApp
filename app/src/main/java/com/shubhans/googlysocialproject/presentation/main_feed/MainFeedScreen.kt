@@ -7,7 +7,9 @@ import com.shubhans.googlysocialproject.presentation.components.StandardScaffold
 
 @Composable
 fun MainFeedScreen(navController: NavController) {
-    StandardScaffold(navController = navController, content = { /*TODO*/ })
+  StandardScaffold(navController = navController) {
+      
+  }
 
     Post(
         post = com.shubhans.googlysocialproject.domain.model.Post(

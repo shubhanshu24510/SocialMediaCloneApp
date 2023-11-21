@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.shubhans.googlysocialproject.presentation.components.StandardScaffold
-import com.shubhans.googlysocialproject.presentation.utils.Navigation
 import com.shubhans.googlysocialproject.presentation.ui.Theme.SocialNetworkTwitchTheme
+import com.shubhans.googlysocialproject.presentation.utils.Navigation
 import com.shubhans.googlysocialproject.presentation.utils.Screen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,9 +37,12 @@ class MainActivity : ComponentActivity() {
                             Screen.ProfileScreen.route,
                             Screen.ActivityScreen.route
                         ),
-                        modifier = Modifier.fillMaxSize()
+                        modifier = Modifier.fillMaxSize(),
+                        onFabClick = {
+                            navController.navigate(Screen.CreatePostScreen.route)
+                        }
                     ) {
-                        Navigation(navController = navController)
+                    Navigation(navController = navController)
                     }
                 }
 

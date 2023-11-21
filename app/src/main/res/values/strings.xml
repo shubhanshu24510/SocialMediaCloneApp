@@ -21,4 +21,5 @@
     <string name="chat">Chat\n</string>
     <string name="activity">Activity</string>
     <string name="profile">Profile</string>
+    <string name="add_button">Add button</string>
 </resources>

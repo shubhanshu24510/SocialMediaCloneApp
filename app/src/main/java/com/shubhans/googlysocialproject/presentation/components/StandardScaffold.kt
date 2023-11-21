@@ -5,17 +5,23 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.BottomAppBar
 import androidx.compose.material.BottomNavigation
+import androidx.compose.material.FabPosition
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.outlined.Doorbell
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Message
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.shubhans.googlysocialproject.R
 import com.shubhans.googlysocialproject.domain.model.BottomNavItem
 import com.shubhans.googlysocialproject.presentation.StandardBottomNavItem
 import com.shubhans.googlysocialproject.presentation.utils.Screen
@@ -25,7 +31,7 @@ import com.shubhans.googlysocialproject.presentation.utils.Screen
 fun StandardScaffold(
     navController: NavController,
     modifier: Modifier = Modifier,
-    showBottomBar :Boolean =true,
+    showBottomBar: Boolean = true,
     bottomNavItem: List<BottomNavItem> = listOf(
         BottomNavItem(
             route = Screen.MainFeedScreen.route,
@@ -48,7 +54,8 @@ fun StandardScaffold(
             contentDescription = "Profile"
         )
     ),
-    content: @Composable () -> Unit
+    onFabClick: () -> Unit = {},
+    content:@Composable () -> Unit
 ) {
     Scaffold(
         bottomBar = {
@@ -68,7 +75,7 @@ fun StandardScaffold(
                                 alertCount = bottomNavItem.alertCount,
                                 enabled = true
                             ) {
-                                if(navController.currentDestination?.route != bottomNavItem.route){
+                                if (navController.currentDestination?.route != bottomNavItem.route) {
                                     navController.navigate(bottomNavItem.route)
                                 }
 
@@ -77,7 +84,25 @@ fun StandardScaffold(
                     }
                 }
             }
-    }) {
+        },
+        floatingActionButton = {
+            if (showBottomBar) {
+                FloatingActionButton(onClick = onFabClick,
+                    backgroundColor = MaterialTheme.colors.primary) {
+                    Icon(
+                        imageVector = Icons.Default.Add, contentDescription = stringResource(
+                            id = R.string.add_button
+                        )
+                    )
+
+
+                }
+            }
+        },
+        isFloatingActionButtonDocked = true,
+        floatingActionButtonPosition = FabPosition.Center,
+        modifier = modifier
+    ) {
         content()
     }
 }
