@@ -1,5 +1,7 @@
-package com.shubhans.googlysocialproject.presentation
+package com.shubhans.googlysocialproject.presentation.components
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.RowScope
@@ -43,6 +45,10 @@ fun RowScope.StandardBottomNavItem(
     if (alertCount != null && alertCount < 0) {
         throw IllegalArgumentException("Alert count can't be negative.")
     }
+    val lineLength = animateFloatAsState(
+        targetValue = if(selected) 1f else 0f,
+        animationSpec = tween(durationMillis = 300), label = ""
+    )
     BottomNavigationItem(selected = selected,
         onClick = onClick,
         modifier = modifier,
@@ -54,15 +60,15 @@ fun RowScope.StandardBottomNavItem(
                 .fillMaxSize()
                 .padding(Spacesmall)
                 .drawBehind {
-                    if (selected) {
+                    if (lineLength.value >0f) {
                         drawLine(
                             color = if (selected) {
                                 selectedColour
                             } else {
                                 unSelectedColour
                             },
-                            start = Offset(size.width/2f-15.dp.toPx(), size.height),
-                            end = Offset(size.width/2f + 15.dp.toPx(), size.height),
+                            start = Offset(size.width / 2f - 15.dp.toPx(), size.height),
+                            end = Offset(size.width / 2f + 15.dp.toPx(), size.height),
                             strokeWidth = 2.dp.toPx(),
                             cap = StrokeCap.Round
                         )
@@ -74,13 +80,13 @@ fun RowScope.StandardBottomNavItem(
                     modifier = Modifier.align(Alignment.Center)
                 )
                 if (alertCount != null) {
-                    val alertCount = if (alertCount > 99) {
+                    val alertText = if (alertCount > 99) {
                         "99+"
                     } else {
                         alertCount.toString()
                     }
                     Text(
-                        text = alertCount,
+                        text = alertText,
                         color = MaterialTheme.colors.onPrimary,
                         modifier = Modifier
                             .align(Alignment.TopCenter)

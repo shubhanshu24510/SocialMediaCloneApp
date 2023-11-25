@@ -22,8 +22,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.shubhans.googlysocialproject.R
-import com.shubhans.googlysocialproject.domain.model.BottomNavItem
-import com.shubhans.googlysocialproject.presentation.StandardBottomNavItem
+import com.shubhans.googlysocialproject.domain.m.model.BottomNavItem
 import com.shubhans.googlysocialproject.presentation.utils.Screen
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")

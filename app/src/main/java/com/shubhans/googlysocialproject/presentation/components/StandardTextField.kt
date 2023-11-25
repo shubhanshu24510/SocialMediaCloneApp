@@ -12,9 +12,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.semantics
@@ -33,13 +30,12 @@ fun StandardTextField(
     maxLines: Int = 1,
     onValueChange: (String) -> Unit,
     showPasswordToggled: Boolean = false,
+    keyboardType: KeyboardType = KeyboardType.Text,
+    isPasswordToggleDisplayed: Boolean = keyboardType == KeyboardType.Password,
     onToggledPasswordClick: (Boolean) -> Unit = {},
     error: String = "!",
-    keyboardType: KeyboardType = KeyboardType.Text
 ) {
-    val isPasswordToggleDisplayed by remember {
-        mutableStateOf(keyboardType == KeyboardType.Password)
-    }
+
     Column(modifier = Modifier.fillMaxWidth()) {
         TextField(
             value = text,

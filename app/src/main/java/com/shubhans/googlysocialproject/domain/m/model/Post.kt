@@ -1,4 +1,4 @@
-package com.shubhans.googlysocialproject.domain.model
+package com.shubhans.googlysocialproject.domain.m.model
 
 data class Post(
     val username: String,
@@ -6,6 +6,5 @@ data class Post(
     val profilePictureUrl: String,
     val description: String,
     val likeCount: Int,
-    val commentCount:Int
-
+    val commentCount: Int
 )

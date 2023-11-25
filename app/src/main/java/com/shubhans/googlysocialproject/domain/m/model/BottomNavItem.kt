@@ -1,4 +1,4 @@
-package com.shubhans.googlysocialproject.domain.model
+package com.shubhans.googlysocialproject.domain.m.model
 
 import androidx.compose.ui.graphics.vector.ImageVector
 

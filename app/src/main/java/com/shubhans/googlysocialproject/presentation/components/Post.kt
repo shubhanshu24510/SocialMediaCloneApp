@@ -27,6 +27,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -40,17 +41,22 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.shubhans.googlysocialproject.R
-import com.shubhans.googlysocialproject.domain.model.Post
-import com.shubhans.googlysocialproject.presentation.utils.Constants
+import com.shubhans.googlysocialproject.domain.m.model.Post
 import com.shubhans.googlysocialproject.presentation.ui.Theme.HintGray
 import com.shubhans.googlysocialproject.presentation.ui.Theme.MediumGray
+import com.shubhans.googlysocialproject.presentation.ui.Theme.ProfilePictureSizeExtraSmall
+import com.shubhans.googlysocialproject.presentation.ui.Theme.ProfilePictureSizeMedium
 import com.shubhans.googlysocialproject.presentation.ui.Theme.SpaceMedium
 import com.shubhans.googlysocialproject.presentation.ui.Theme.TextWhite
 import com.shubhans.googlysocialproject.presentation.ui.Theme.shapes
+import com.shubhans.googlysocialproject.presentation.utils.Constants
+
 @Composable
 fun Post(
     post: Post,
-    profilePictureSize: Dp = 23.dp
+    modifier: Modifier = Modifier,
+    showProfileImage:Boolean =true,
+    onPostClick: () -> Unit = {}
 ) {
     Box(
         modifier = Modifier
@@ -60,9 +66,15 @@ fun Post(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
+                .offset(
+                    y = if (showProfileImage) {
+                        ProfilePictureSizeExtraSmall / 2f
+                    } else 0.dp
+                )
                 .clip(shape = shapes.medium)
-                .offset(y = profilePictureSize / 2f)
+                .shadow(5.dp)
                 .background(MediumGray)
+                .clickable { onPostClick() }
         ) {
             Image(
                 painterResource(id = R.drawable.himalayamountain),
@@ -105,7 +117,7 @@ fun Post(
                             )
                         }
                     },
-                    style =MaterialTheme.typography.h1,
+                    style = MaterialTheme.typography.h1,
                     overflow = TextOverflow.Ellipsis,
                     maxLines = Constants.Max_Post_Description_Lines
                 )
@@ -134,15 +146,17 @@ fun Post(
 
             }
         }
+        if (showProfileImage) {
             Image(
                 painterResource(id = R.drawable.profile_picture),
                 contentDescription = "profile Image",
                 modifier = Modifier
-                    .size(profilePictureSize)
+                    .size(ProfilePictureSizeMedium)
                     .clip(CircleShape)
                     .align(Alignment.TopCenter)
             )
         }
+    }
     }
 
 

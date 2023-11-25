@@ -22,4 +22,12 @@
     <string name="activity">Activity</string>
     <string name="profile">Profile</string>
     <string name="add_button">Add button</string>
+    <string name="show_back_arrow">show back arrow top bar</string>
+    <string name="your_feed">Your Feed</string>
+    <string name="search_iocn">Search Iocn</string>
+    <string name="date_comment">days ago</string>
+    <string name="your_activity">Your Activity</string>
+    <string name="commented_on">commented on</string>
+    <string name="followed_you">followed you</string>
+    <string name="your_post">your post\n</string>
 </resources>

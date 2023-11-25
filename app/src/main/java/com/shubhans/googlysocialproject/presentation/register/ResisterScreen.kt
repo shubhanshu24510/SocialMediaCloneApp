@@ -51,7 +51,8 @@ fun RegisterScreen(
                 text = viewModel.emailText.value,
                 error = viewModel.emailError.value,
                 onValueChange = { viewModel.setEmailText(it) },
-                hint = stringResource(id = R.string.Email)
+                hint = stringResource(id = R.string.Email),
+                keyboardType = KeyboardType.Email
             )
 
             Spacer(modifier = Modifier.height(SpaceMedium))
