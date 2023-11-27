@@ -1,4 +1,4 @@
-package com.shubhans.googlysocialproject.presentation.utils
+package com.shubhans.googlysocialproject.presentation.utils.State
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -16,6 +16,7 @@ import com.shubhans.googlysocialproject.presentation.post_details.PostDetailsScr
 import com.shubhans.googlysocialproject.presentation.profile.ProfileScreen
 import com.shubhans.googlysocialproject.presentation.register.RegisterScreen
 import com.shubhans.googlysocialproject.presentation.splash.SplashScreen
+import com.shubhans.googlysocialproject.presentation.utils.Screen
 
 @Composable
 fun Navigation(navController: NavHostController) {
@@ -40,9 +41,6 @@ fun Navigation(navController: NavHostController) {
         composable(Screen.ActivityScreen.route) {
             ActivityScreen(navController = navController)
         }
-        composable(Screen.ProfileScreen.route){
-            ProfileScreen(navController = navController)
-        }
         composable(Screen.CreatePostScreen.route){
             CreatePostScreen(navController =navController)
         }
@@ -57,6 +55,9 @@ fun Navigation(navController: NavHostController) {
                     commentCount = 14
                 )
             )
+        }
+        composable(Screen.ProfileScreen.route){
+            ProfileScreen(navController = navController)
         }
     }
 }

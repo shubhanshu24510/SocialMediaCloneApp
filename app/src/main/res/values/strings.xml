@@ -30,4 +30,12 @@
     <string name="commented_on">commented on</string>
     <string name="followed_you">followed you</string>
     <string name="your_post">your post\n</string>
+    <string name="your_profile">your profile</string>
+    <string name="edit">Edit\n</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="posts">Post</string>
+    <string name="un_follow">Unfollow</string>
+    <string name="fo_llow">Following</string>
+    <string name="profile_image">Profile Image</string>
 </resources>
