@@ -57,6 +57,9 @@ android {
 }
 
 dependencies {
+    //flow layout
+    implementation ("com.google.accompanist:accompanist-flowlayout:0.17.0")
+
     //splash Screen
     implementation ("androidx.core:core-splashscreen:1.1.0-alpha02")
 

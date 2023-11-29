@@ -38,4 +38,12 @@
     <string name="un_follow">Unfollow</string>
     <string name="fo_llow">Following</string>
     <string name="profile_image">Profile Image</string>
+    <string name="edit_your_profile">Edit your Profile</string>
+    <string name="user_name">Username</string>
+    <string name="password_visible_content_description">pass hidden</string>
+    <string name="password_hidden_content_description">pass hidden</string>
+    <string name="instragram">Instragram</string>
+    <string name="github">GitHub</string>
+    <string name="your_bio">Your Biography</string>
+    <string name="select_top_3_skills">Select Top 3 Skills</string>
 </resources>

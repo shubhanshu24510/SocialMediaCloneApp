@@ -1,10 +1,10 @@
 package com.shubhans.googlysocialproject.presentation.profile.components
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -42,13 +42,14 @@ fun ProfileHeaderScreen(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .offset(
-                    x = if (isOwnProfile) {
+                    x =
+                    if (isOwnProfile) {
                         (30.dp + Spacesmall) / 2f
                     } else 0.dp
                 )
         ) {
             Text(
-                text = "shubhanshu2451",
+                text = user.username,
                 style = MaterialTheme.typography.h1.copy(
                     fontSize = 24.sp
                 ),
@@ -66,15 +67,14 @@ fun ProfileHeaderScreen(
                     )
                 }
             }
-            Spacer(modifier = Modifier.width(SpaceLarge))
-
-                Text(
-                    text = "Description",
-                    style = MaterialTheme.typography.body2,
-                    textAlign = TextAlign.Center
-                )
-            }
-            Spacer(modifier = Modifier.width(SpaceLarge))
+        }
+            Spacer(modifier = Modifier.height(Spacesmall))
+            Text(
+                text = user.description,
+                style = MaterialTheme.typography.body2,
+                textAlign = TextAlign.Center
+            )
+        Spacer(modifier = Modifier.height(SpaceMedium))
         ProfileStatus(
             user = user,
             isOwnProfile = isOwnProfile

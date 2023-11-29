@@ -10,7 +10,7 @@ sealed class Screen(val route:String){
     object ChatScreen :Screen("chat_screen")
     object MessageScreen :Screen("message_screen")
     object ProfileScreen :Screen("profile_screen")
-    object EditProfileScreen :Screen("edit_profile_screen")
+    object ProfileEditScreen :Screen("edit_profile_screen")
     object PersonalListScreen :Screen("personal_list_screen")
     object CreatePostScreen :Screen("create_post_screen")
     object SearchScreen :Screen("search_screen")

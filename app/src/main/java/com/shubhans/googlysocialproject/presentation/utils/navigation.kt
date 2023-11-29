@@ -1,4 +1,4 @@
-package com.shubhans.googlysocialproject.presentation.utils.State
+package com.shubhans.googlysocialproject.presentation.utils
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -14,6 +14,7 @@ import com.shubhans.googlysocialproject.presentation.login.LoginScreen
 import com.shubhans.googlysocialproject.presentation.main_feed.MainFeedScreen
 import com.shubhans.googlysocialproject.presentation.post_details.PostDetailsScreen
 import com.shubhans.googlysocialproject.presentation.profile.ProfileScreen
+import com.shubhans.googlysocialproject.presentation.profile_edit.ProfileEditScreen
 import com.shubhans.googlysocialproject.presentation.register.RegisterScreen
 import com.shubhans.googlysocialproject.presentation.splash.SplashScreen
 import com.shubhans.googlysocialproject.presentation.utils.Screen
@@ -21,7 +22,7 @@ import com.shubhans.googlysocialproject.presentation.utils.Screen
 @Composable
 fun Navigation(navController: NavHostController) {
     NavHost(navController = navController,
-        startDestination = Screen.SplashScreen.route,
+        startDestination = Screen.ProfileEditScreen.route,
         modifier = Modifier.fillMaxSize()){
         composable(Screen.SplashScreen.route){
             SplashScreen(navController = navController)
@@ -58,6 +59,9 @@ fun Navigation(navController: NavHostController) {
         }
         composable(Screen.ProfileScreen.route){
             ProfileScreen(navController = navController)
+        }
+        composable(Screen.ProfileEditScreen.route){
+            ProfileEditScreen(navController = navController)
         }
     }
 }
