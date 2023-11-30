@@ -52,4 +52,5 @@
     <string name="create_a_new_post">Create a New Post</string>
     <string name="make_description">Make Description</string>
     <string name="Post">Post</string>
+    <string name="liked_by">Liked By</string>
 </resources>

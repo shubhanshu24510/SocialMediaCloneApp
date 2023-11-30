@@ -49,7 +49,7 @@ import kotlin.random.Random
 @Composable
 fun ProfileEditScreen(
     navController: NavHostController,
-    profillePictireSize: Dp = ProfilePictureSizeLarge,
+    profillePictureSize: Dp = ProfilePictureSizeLarge,
     viewModel: EditProfileViewModel = hiltViewModel()
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
@@ -82,7 +82,7 @@ fun ProfileEditScreen(
             BannerEditSection(
                 bannerImage = painterResource(id = R.drawable.cover_photo),
                 profileImage = painterResource(id = R.drawable.profile_picture),
-                profilePictureSize = profillePictireSize
+                profilePictureSize = profillePictureSize
             )
             Column(
                 modifier = Modifier
@@ -219,7 +219,6 @@ fun BannerEditSection(
                     color = MaterialTheme.colors.onSurface,
                     shape = CircleShape
                 )
-
         )
     }
 }

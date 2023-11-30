@@ -57,7 +57,6 @@ fun CreatePostScreen(
                     Icon(imageVector = Icons.Default.Check,
                         contentDescription = null,
                         tint = MaterialTheme.colors.primary)
-
                 }
             }
         )
@@ -108,7 +107,6 @@ fun CreatePostScreen(
                     imageVector = Icons.Default.Send,
                     contentDescription = null
                 )
-
             }
         }
     }

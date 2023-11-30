@@ -23,7 +23,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.shubhans.googlysocialproject.R
 import com.shubhans.googlysocialproject.domain.m.model.User
-import com.shubhans.googlysocialproject.presentation.ui.Theme.SpaceLarge
 import com.shubhans.googlysocialproject.presentation.ui.Theme.SpaceMedium
 import com.shubhans.googlysocialproject.presentation.ui.Theme.Spacesmall
 

@@ -12,18 +12,18 @@ import com.shubhans.googlysocialproject.presentation.chat.ChatScreen
 import com.shubhans.googlysocialproject.presentation.create_post.CreatePostScreen
 import com.shubhans.googlysocialproject.presentation.login.LoginScreen
 import com.shubhans.googlysocialproject.presentation.main_feed.MainFeedScreen
+import com.shubhans.googlysocialproject.presentation.person_list.PersonListScreen
 import com.shubhans.googlysocialproject.presentation.post_details.PostDetailsScreen
 import com.shubhans.googlysocialproject.presentation.profile.ProfileScreen
 import com.shubhans.googlysocialproject.presentation.profile_edit.ProfileEditScreen
 import com.shubhans.googlysocialproject.presentation.register.RegisterScreen
 import com.shubhans.googlysocialproject.presentation.search.SearchScreen
 import com.shubhans.googlysocialproject.presentation.splash.SplashScreen
-import com.shubhans.googlysocialproject.presentation.utils.Screen
 
 @Composable
 fun Navigation(navController: NavHostController) {
     NavHost(navController = navController,
-        startDestination = Screen.CreatePostScreen.route,
+        startDestination = Screen.SplashScreen.route,
         modifier = Modifier.fillMaxSize()){
         composable(Screen.SplashScreen.route){
             SplashScreen(navController = navController)
@@ -49,7 +49,7 @@ fun Navigation(navController: NavHostController) {
         composable(Screen.PostDetailsScreen.route){
             PostDetailsScreen(navController =navController,
                 post = Post(
-                    username = "shubhans24510",
+                    username = "subhumans24510",
                     imageUrl = "",
                     profilePictureUrl = "",
                     description = "Absolutely adore Quito! Nestled amid stunning mountains, this city captivates with its rich history",
@@ -66,6 +66,9 @@ fun Navigation(navController: NavHostController) {
         }
         composable(Screen.SearchScreen.route){
             SearchScreen(navController = navController)
+        }
+        composable(Screen.PersonalListScreen.route){
+            PersonListScreen(navController = navController)
         }
     }
 }

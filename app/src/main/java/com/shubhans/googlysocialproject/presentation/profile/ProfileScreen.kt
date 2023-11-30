@@ -104,19 +104,22 @@ fun ProfileScreen(
                 ProfileHeaderScreen(
                     user = User(
                         profilePictureUrl = "",
-                        username = "shubhanshu2451",
+                        username = "subhuman2451",
                         description = "Belief in Yourself \n" + "Everything is possible in this universe",
                         followingCount = 350,
                         followerCount = 750,
                         postCount = 10
-                    )
+                    ),
+                    onEditClick = {
+                        navController.navigate(Screen.ProfileEditScreen.route)
+                    }
                 )
             }
             items(13) {
                 Spacer(modifier = Modifier.height(SpaceMedium))
                 Post(
                     post = com.shubhans.googlysocialproject.domain.m.model.Post(
-                        username = "shubhanshu2451",
+                        username = "subhuman2451",
                         imageUrl = "",
                         profilePictureUrl = "",
                         description = "Absolutely adore Quito! Nestled amid stunning mountains, this city captivates with its rich history",

@@ -69,7 +69,7 @@ fun SearchScreen(
                 items(13) {
                     UserProfileItem(
                         user = User(
-                            username = "shubhanshu2451",
+                            username = "subhumans2451",
                             profilePictureUrl = "",
                             description = "Absolutely adore Quito! Nestled amid stunning mountains, this city captivates with its rich history",
                             followerCount = 730,
