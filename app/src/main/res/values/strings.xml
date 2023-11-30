@@ -49,4 +49,7 @@
     <string name="check_mark">Check Mark Update</string>
     <string name="search_for_users">Search For Users</string>
     <string name="se_arch">Search</string>
+    <string name="create_a_new_post">Create a New Post</string>
+    <string name="make_description">Make Description</string>
+    <string name="Post">Post</string>
 </resources>

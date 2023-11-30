@@ -23,15 +23,18 @@ import com.shubhans.googlysocialproject.presentation.utils.Screen
 fun MainFeedScreen(
     navController: NavController
 ) {
-
     Column(modifier = Modifier.fillMaxSize()) {
         StandardTopToolBar(
             modifier = Modifier.fillMaxWidth(),
             navController = navController,
             showBackArrow = true,
-            title = { Text(text = stringResource(id = R.string.your_feed),
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colors.onBackground) },
+            title = {
+                Text(
+                    text = stringResource(id = R.string.your_feed),
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colors.onBackground
+                )
+            },
             navActions = {
                 IconButton(onClick = { navController.navigate(Screen.SearchScreen.route) }) {
                     Icon(
@@ -51,12 +54,10 @@ fun MainFeedScreen(
                 likeCount = 53,
                 description = "Absolutely adore Quito! Nestled amid stunning mountains, this city captivates with its rich history",
                 commentCount = 13,
-
-                )
+            )
         ) {
             navController.navigate(Screen.PostDetailsScreen.route)
         }
-
     }
 }
 

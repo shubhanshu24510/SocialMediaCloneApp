@@ -23,7 +23,7 @@ import com.shubhans.googlysocialproject.presentation.utils.Screen
 @Composable
 fun Navigation(navController: NavHostController) {
     NavHost(navController = navController,
-        startDestination = Screen.SearchScreen.route,
+        startDestination = Screen.CreatePostScreen.route,
         modifier = Modifier.fillMaxSize()){
         composable(Screen.SplashScreen.route){
             SplashScreen(navController = navController)
