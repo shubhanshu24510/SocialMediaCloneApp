@@ -46,4 +46,7 @@
     <string name="github">GitHub</string>
     <string name="your_bio">Your Biography</string>
     <string name="select_top_3_skills">Select Top 3 Skills</string>
+    <string name="check_mark">Check Mark Update</string>
+    <string name="search_for_users">Search For Users</string>
+    <string name="se_arch">Search</string>
 </resources>

@@ -16,13 +16,14 @@ import com.shubhans.googlysocialproject.presentation.post_details.PostDetailsScr
 import com.shubhans.googlysocialproject.presentation.profile.ProfileScreen
 import com.shubhans.googlysocialproject.presentation.profile_edit.ProfileEditScreen
 import com.shubhans.googlysocialproject.presentation.register.RegisterScreen
+import com.shubhans.googlysocialproject.presentation.search.SearchScreen
 import com.shubhans.googlysocialproject.presentation.splash.SplashScreen
 import com.shubhans.googlysocialproject.presentation.utils.Screen
 
 @Composable
 fun Navigation(navController: NavHostController) {
     NavHost(navController = navController,
-        startDestination = Screen.ProfileEditScreen.route,
+        startDestination = Screen.SearchScreen.route,
         modifier = Modifier.fillMaxSize()){
         composable(Screen.SplashScreen.route){
             SplashScreen(navController = navController)
@@ -62,6 +63,9 @@ fun Navigation(navController: NavHostController) {
         }
         composable(Screen.ProfileEditScreen.route){
             ProfileEditScreen(navController = navController)
+        }
+        composable(Screen.SearchScreen.route){
+            SearchScreen(navController = navController)
         }
     }
 }
